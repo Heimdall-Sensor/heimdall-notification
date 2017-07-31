@@ -1,0 +1,40 @@
+heimdall:
+    notification:
+        notification_topic: "/heimdall/notification"
+        notifiers: ["sms_notifier_1", "email_notifier_1"]
+
+        sms_notifier_1:
+            type: "sms"
+
+            # Repeat the same message at most once every 300 seconds
+            repeat_throttle: 300
+
+            # Send as most 1 message per 60 seconds
+            message_throttle: 60
+
+            cm_token: "ADD_YOUR_TOKEN"
+            cm_reference: "HEIMDALL_NOTIFICATION"
+
+            sms_sender: "Heimdall"
+
+        email_notifier_1:
+            type: "email"
+
+            # Repeat the same message at most once every 60 seconds
+            repeat_throttle: 60
+
+            # Send as most 1 message per 10 seconds
+            message_throttle: 10
+
+            smtp_user: "smtp"
+
+            # Not posting password in the repo - 
+            # obtain it yourself from the server or use a different account
+            smtp_password: ""
+            smtp_host: "smtp.host"
+            smtp_port: 587
+            smtp_tls: 1
+            mail_from: "heimdall@heimdall-sensor.org"
+            mail_recipient: "your@address.com"
+            mail_subject: "Heimdall notification - Something has happened"
+            verbose: false

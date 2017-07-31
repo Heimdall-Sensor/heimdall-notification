@@ -1,0 +1,6 @@
+# Heimdall-Notification
+
+The notification node receives notifications from the detection node and dispatches them using e-mail or SMS.
+For SMS a SMS gateway is required. The current implementation uses CM, but should be easy to adopt to support
+other providers.
+

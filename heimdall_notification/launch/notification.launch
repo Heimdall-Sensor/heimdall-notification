@@ -1,0 +1,4 @@
+<launch>
+  <rosparam command="load" file="$(find heimdall_notification)/parameters/parameters.yaml" />
+  <node pkg="heimdall_notification" type="heimdall_notification_node" name="heimdall_notification" />
+</launch>
